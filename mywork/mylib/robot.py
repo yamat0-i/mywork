@@ -1,5 +1,6 @@
 from mywork.mylib import console
 from mywork.mylib import fiber_measure
+from mywork.mylib import s_parameter
 
 
 class Robot():
@@ -24,6 +25,9 @@ class Analyser(Robot):
         if self.mode == 'fiber':
             self.get_data()
             fiber_measure.measure(self.date_dir_path, self.date)
+        elif self.mode == 's-parameter':
+            self.get_data()
+            s_parameter.load_and_plot_Sparam(self.date_dir_path, self.date)
         elif self.mode == 'exit':
             return
         
